@@ -7,13 +7,11 @@ import hashlib
 
 apkFile = "WhatsApp.apk"
 apk = APK(apkFile)
-try:
-    zipFile = zipfile.ZipFile(apkFile,'r')
-    classesDexFile = zipFile.read('classes.dex')
-    hash = hashlib.md5()
-    hash.update(classesDexFile)
 
-    print("Version: " + apk.version_name)
-    print("ClassesDex: " + base64.b64encode(hash.digest()).decode("utf-8"));
-except Exception as e:
-    print(sys.argv[1] + " not found.")
+zipFile = zipfile.ZipFile(apkFile,'r')
+classesDexFile = zipFile.read('classes.dex')
+hash = hashlib.md5()
+hash.update(classesDexFile)
+
+print("Version: " + apk.version_name)
+print("ClassesDex: " + base64.b64encode(hash.digest()).decode("utf-8"));
