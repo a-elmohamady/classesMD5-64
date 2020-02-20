@@ -8,7 +8,7 @@ Very useful when you need classes.dex md5 raw hash, encoded with base64 for toke
 **Usage:**
 
 ```
-classes.exe file.apk
+python dexMD5.py
 ```
 
 If you are a Linux/macOS user, you can use the python script: [dexMD5.py](https://github.com/mgp25/classesMD5-64/blob/master/dexMD5.py)
