@@ -4,12 +4,9 @@ import base64
 import zipfile
 import hashlib
 
-if len(sys.argv) < 2:
-    print("Usage: python dexMD5.py <WhatsApp.apk>")
-    exit()
-else:
-    apkFile = sys.argv[1]
-    apk = APK(apkFile)
+
+apkFile = "WhatsApp.apk"
+apk = APK(apkFile)
 try:
     zipFile = zipfile.ZipFile(apkFile,'r')
     classesDexFile = zipFile.read('classes.dex')
